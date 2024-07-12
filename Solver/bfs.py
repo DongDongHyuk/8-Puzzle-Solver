@@ -12,5 +12,4 @@ def bfs(root):
             if i not in mkd:          
                 que.append(i)
                 mkd.add(i)
-                i.parent = cur
     return mkd,cur

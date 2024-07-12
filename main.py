@@ -11,7 +11,7 @@ def main():
          8, 2, 1]
 
     root = Node(m)    
-    Solution = bfs
+    Solution = astar
 
     t1 = t()
     mkd,leaf = Solution(root)
@@ -25,8 +25,11 @@ def main():
     path = path[::-1]
         
     for node in path:
+        if Solution == astar:
+            f,h,g = node.F(),node.H(),node.G()
+            print('F({}) = H({}) + G({})'.format(f,h,g))
         node.printNode()
-    print('visited {}Nodes.'.format(len(mkd)))
+    print('visited {}nodes.'.format(len(mkd)))
     print('Searched in {}s'.format(round(t2,3)))
 
 if __name__ == '__main__':
