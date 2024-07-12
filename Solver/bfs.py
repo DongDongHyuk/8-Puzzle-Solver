@@ -1,6 +1,6 @@
 def bfs(root):
     que = [root]
-    mkd = set([root])
+    mkd = {root}
     while 1:
         if not que:
             print('fail to find')
@@ -13,4 +13,4 @@ def bfs(root):
                 que.append(i)
                 mkd.add(i)
                 i.parent = cur
-    return mkd
+    return mkd,cur

@@ -1,11 +1,11 @@
 class Node:
 
-    leaf = [1,2,3,4,5,6,7,0,0]
+    leaf = [1,2,3,4,5,6,7,8,0]
     
     def __init__(self,m):
         self.m = m[:]
         self.parent = -1
-        self.fix = []
+        self.depth = 0
 
     def __ne__(self,other):
         return self.m != other.m
@@ -15,6 +15,9 @@ class Node:
 
     def __hash__(self):
         return hash(tuple(self.m))
+
+    def __lt__(self,other):
+        return 0
 
     def childs(self):
         res = []
@@ -30,6 +33,8 @@ class Node:
                 mClone[i],mClone[j] = mClone[j],mClone[i]
                 res.append(Node(mClone))
         return res
+
+    def H()
 
     def printNode(self):
         print('Node Informations')
